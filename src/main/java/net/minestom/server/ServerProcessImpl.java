@@ -201,12 +201,9 @@ final class ServerProcessImpl implements ServerProcess {
             throw new IllegalStateException("Server already started");
         }
 
-        extension.start();
-        extension.gotoPreInit();
-
         LOGGER.info("Starting Minestom server.");
 
-        extension.gotoInit();
+        extension.start();
 
         // Init server
         try {
@@ -218,8 +215,6 @@ final class ServerProcessImpl implements ServerProcess {
 
         // Start server
         server.start();
-
-        extension.gotoPostInit();
 
         LOGGER.info("Minestom server started successfully.");
 
