@@ -67,6 +67,7 @@ final class ServerProcessImpl implements ServerProcess {
 
     public ServerProcessImpl() throws IOException {
         this.exception = new ExceptionManager();
+        this.eventHandler = new GlobalEventHandler();
         this.extension = new ExtensionManager(this);
         this.connection = new ConnectionManager();
         this.packetProcessor = new PacketProcessor();
@@ -76,7 +77,6 @@ final class ServerProcessImpl implements ServerProcess {
         this.command = new CommandManager();
         this.recipe = new RecipeManager();
         this.team = new TeamManager();
-        this.eventHandler = new GlobalEventHandler();
         this.scheduler = new SchedulerManager();
         this.benchmark = new BenchmarkManager();
         this.dimension = new DimensionTypeManager();
